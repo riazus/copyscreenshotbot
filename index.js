@@ -19,7 +19,9 @@ bot.start((ctx) => {
             .then(async function (parsedResult) {
                 const user_input = parsedResult.parsedText;
                 ctx.sendMessage(user_input);
-            })
+            }).catch(function (err) {
+                console.log('ERROR:', err);
+              });
         }
     })
 })
